@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: space-around;
+}
+
+div {
+    position: relative;
+}
+
+[alt="grass"] {
+    width: 1200px;
+    height: 40px;
+    margin-top: 210px;
+}
+
+[alt="player1"],
+[alt="player2"] {
+
+    height: 200px;
+    margin-top: 50px;
+    position: absolute;
+}
+
+[alt="player2"] {
+    right: 50px;
+}
+[alt="ball"] {
+    width: 30px;
+    position: absolute;
+    bottom: 20px;
+    left: 120px;
+    animation-name: movingBall;
+    animation-duration: 2s; 
+    animation-timing-function: linear;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; 
+    
+}
+
+
+@keyframes movingBall {
+    from {
+        transform:translateX(10px);
+
+    }
+
+    to {
+        transform:translateX(920px);
+    }
+
+}
+
+

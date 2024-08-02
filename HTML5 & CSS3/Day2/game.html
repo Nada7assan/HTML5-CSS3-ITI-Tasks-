@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <img id="drag" src="paper.png" alt="paper" draggable="true" ondragstart="drag(event)">
+    <img src="rock.png" alt="rock" draggable="true" ondragstart="drag(event)">
+    <img src="scissors.png" alt="scissors" draggable="true" ondragstart="drag(event)">
+</div>
+<div>
+    <div id="drop" style="border: black 1px solid; display: inline-block; width: 500px;height: 350px;" ondragover="allowDrop()" ondrop="drop()">Put your Choice</div>
+</div>
+    <script>
+        function drag (e){
+            e.dataTransfer.setData("text", e.target.id);
+        }
+        function drop(e){
+            e.preventDefault(); 
+            var data = e.dataTransfer.getData("text");
+            e.target.appendChild(document.getElementById("data"));
+        }
+        function allowDrop(e) {
+    e.preventDefault();
+}
+    </script>
+</body>
+</html>

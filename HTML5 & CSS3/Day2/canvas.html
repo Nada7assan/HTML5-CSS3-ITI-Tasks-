@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+    <input type="color" name="color" id="colorRng"><br>
+    <canvas width="500px" height="500px" style="border: 1px black solid;"></canvas>
+
+    <script>
+        var btn = document.getElementsByTagName("button")[0];
+        let color = document.getElementsByName("color")[0];
+        var c = document.getElementsByTagName("canvas")[0];
+        var ctx = c.getContext("2d");
+        btn.addEventListener("click",function(){
+            ctx.clearRect(0,0,c.width,c.height);
+            setInterval(() => {
+                ctx.beginPath();
+                let colorPick = color.value;
+                ctx.arc(Math.random()*c.width,Math.random()*c.height,20,0,Math.PI * 2,true)
+                ctx.strokeStyle = colorPick;
+                ctx.stroke(); 
+                },1000);          
+            })
+     
+
+    </script>
+</body>
+
+</html>
